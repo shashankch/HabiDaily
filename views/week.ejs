@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <title><%=title%></title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+      <a class="navbar-brand" href="#">HabiDaily</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container d-flex justify-content-md-center">
+        <h1 class="display-3">Weekly Report</h1>
+      </div>
+      <div class="container-fluid mt-3">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tr>
+              <th>Habits</th>
+
+              <th><%= new Date().getDate()-6 %></th>
+              <th><%= new Date().getDate()-5 %></th>
+              <th><%= new Date().getDate()-4%></th>
+              <th><%= new Date().getDate()-3 %></th>
+              <th><%= new Date().getDate()-2 %></th>
+              <th><%= new Date().getDate()-1 %></th>
+              <th><%= new Date().getDate() %></th>
+            </tr>
+            <% for(let i of habits) { %>
+
+            <tr>
+              <td><%= i.title %></td>
+              <% for(let index=0;index<7;index++) { %>
+              <td>
+                <div class="dropdown">
+                  <a
+                    class="btn btn-outline-success dropdown-toggle btn-sm"
+                    href="#"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <%= i.track[index] %>
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a
+                      class="dropdown-item"
+                      href="/update-status/<%=i.id%>/<%=index%>/None"
+                      >None</a
+                    >
+
+                    <a
+                      class="dropdown-item"
+                      href="/update-status/<%=i.id%>/<%=index%>/Not Done"
+                      >Not Done</a
+                    >
+
+                    <a
+                      class="dropdown-item"
+                      href="/update-status/<%=i.id%>/<%=index%>/Done"
+                      >Done</a
+                    >
+                  </div>
+                </div>
+              </td>
+              <% } %>
+            </tr>
+            <% } %>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
