@@ -4,6 +4,7 @@
 
 ## Steps to run locally:
 
+```
 - git clone https://github.com/shashankch/HabiDaily.git
 
 - cd HabiDaily directory
@@ -13,3 +14,6 @@
 - Install MongoDB and run
 
 - npm start
+```
+
+Your
