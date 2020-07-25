@@ -1,6 +1,6 @@
 # HabiDaily
 
-## A simple habit tracking application using Node.Js,Express and MongoDB.
+A simple habit tracking application using Node.Js,Express and MongoDB.
 
 ## Steps to run locally:
 
@@ -24,6 +24,4 @@
 * npm start
 ```
 
-```
-Your application should now be running on [localhost:8000].
-```
+Your application should now be running on [localhost:8000](https://github.com/shashankch).
