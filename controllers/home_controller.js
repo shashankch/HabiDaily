@@ -1,5 +1,7 @@
+// import models
 const Detail = require("../models/detail");
 
+// action controller to display all habits
 module.exports.home = function (req, res) {
   Detail.find({}, function (err, habits) {
     if (err) {
@@ -14,6 +16,7 @@ module.exports.home = function (req, res) {
   });
 };
 
+// action controller to create new Habits.
 module.exports.build = function (req, res) {
   console.log(req.body);
   Detail.create(
@@ -36,6 +39,7 @@ module.exports.build = function (req, res) {
   return res.redirect("back");
 };
 
+// action controller to delete particular habit.
 module.exports.destroy = function (req, res) {
   Detail.findByIdAndDelete(req.params.habitId, function (err, habit) {
     if (err) {

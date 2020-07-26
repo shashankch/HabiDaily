@@ -2,11 +2,27 @@
 
 A simple habit tracking application using Node.Js,Express and MongoDB.
 
-## Project Directory Structure:
+## Functionalities:
+
+#### Home Page:
+
+- Add habits with short description.
+- display all added habits with related Info.
+- displays count of particular habit followed in a week.
+- delete particular habit.
+
+#### Weekly Progress Page:
+
+- display all habits added along with date and month.
+- display status of each habits:"None","Not Done","Done" for previous 6 days.
+- update status of habits for previous 6 days.
+
+## Project Structure:
 
 ```
 .
 ├── README.md
+├── assets
 ├── config
 │   └── mongoose.js
 ├── controllers
@@ -22,6 +38,7 @@ A simple habit tracking application using Node.Js,Express and MongoDB.
 │   └── track.js
 └── views
     ├── home.ejs
+    ├── layout.ejs
     └── week.ejs
 ```
 
@@ -29,22 +46,15 @@ A simple habit tracking application using Node.Js,Express and MongoDB.
 
 ```
 1. git clone https://github.com/shashankch/HabiDaily.git
-```
 
-```
-2. cd HabiDaily directory
-```
+2. cd HabiDaily
 
-```
 3. npm install
-```
 
-```
 4. Install MongoDB and run
-```
 
-```
 5. npm start
+
 ```
 
-## Your application should now be running on [localhost:8000](https://github.com/shashankch).
+#### Your application should now be running on [localhost:8000](https://github.com/shashankch).
