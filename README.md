@@ -1,6 +1,6 @@
 # HabiDaily
 
-A simple habit tracking application using Node.Js,Express and MongoDB.
+A simple habit tracking application using Node.Js,Express,EJS and MongoDB.
 
 ## Functionalities:
 
